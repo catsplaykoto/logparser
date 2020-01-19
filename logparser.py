@@ -15,7 +15,7 @@ with open('routers.txt') as f:
         ftp.login(username, password)
         ftp.set_pasv(False)
         ftp.cwd('/var/log/')
-        ftp.retrbinary('RETR messages', open('messages'+ ip, 'wb').write)
+        ftp.retrbinary('RETR messages', open('messages'+ ip + '.tx', 'wb').write)
         ftp.quit()
     f.close()
 	
