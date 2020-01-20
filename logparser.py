@@ -25,11 +25,14 @@ with open('logmessages.txt', 'w') as file:
 	file.writelines(input_lines)
 	file.close()
 
+
 with open('logmessages.txt') as f:
 	for row in f:
 		strings = ['alarm', 'Alarm']
 		for string in strings:
 			match = re.search(string, row)
 			if match:
-				print('Found "{}" in "{}"'.format(string, row))
-	f.close()
+				with open('output.txt', 'a') as f:
+					print('Found {}'.format(row), end = '', file=f)
+					f.close()
+		f.close()
