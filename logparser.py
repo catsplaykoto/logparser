@@ -25,7 +25,6 @@ with open('logmessages.txt', 'w') as file:
 	file.writelines(input_lines)
 	file.close()
 
-
 with open('logmessages.txt') as f:
 	for row in f:
 		strings = ['alarm', 'Alarm']
